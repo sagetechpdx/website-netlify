@@ -1,0 +1,86 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import ServiceCard from "../ui/ServiceCard.astro";
+import Section from "./Section.astro";
+
+import c1 from "../../assets/pics/card-pic1.png";
+import c2 from "../../assets/pics/card-pic2.png";
+import c3 from "../../assets/pics/card-pic3.png";
+import c4 from "../../assets/pics/card-pic4.png";
+import c5 from "../../assets/pics/card-pic5.png";
+import c6 from "../../assets/pics/card-pic6.png";
+
+const cards = [
+  {
+    index: 1,
+    titleTop: "Networking Setup",
+    titleBottom: "and Support",
+    img: c1,
+    alt: "SEO",
+    link: "/services/networking",
+  },
+  {
+    index: 2,
+    titleTop: "Software Installation",
+    titleBottom: "and Troubleshooting",
+    img: c2,
+    alt: "SEO",
+    link: "/services/software",
+  },
+  {
+    index: 3,
+    titleTop: "Hardware Repair",
+    titleBottom: "and Upgrades",
+    img: c3,
+    alt: "SEO",
+    link: "/services/hardware",
+  },
+  {
+    index: 1,
+    titleTop: "Data",
+    titleBottom: "Recovery",
+    img: c4,
+    alt: "SEO",
+    link: "/services/datarecovery",
+  },
+  {
+    index: 2,
+    titleTop: "Custom-built",
+    titleBottom: "PCs",
+    img: c5,
+    alt: "SEO",
+    link: "/services/custompc",
+  },
+  {
+    index: 3,
+    titleTop: "Virus and Malware",
+    titleBottom: "Removal",
+    img: c6,
+    alt: "SEO",
+    link: "/services/virusremoval",
+  },
+];
+
+const description =
+  "At Sage Tech, we offer a wide range of technical support services to get all your devices back in working order! These services include:";
+---
+
+<Section id="services">
+  <div class="mt-[140px] mb-5">
+    <SectionTitle sectionTitle="Services" description={description} />
+    <div class="drop-shadow-xl grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
+      {
+        cards.map((card) => (
+          <ServiceCard
+            index={card.index}
+            titleTop={card.titleTop}
+            titleBottom={card.titleBottom}
+            img={card.img}
+            alt={card.alt}
+            link={card.link}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Section>
